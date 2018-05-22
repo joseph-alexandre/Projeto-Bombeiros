@@ -15,13 +15,11 @@ public class Sistema {
     CadastroBombeiro registroBombeiro = new CadastroBombeiro();
     public void apresentarMenu(){
        
-        Object []botões = {"Registros", "Vistoria de Manutenção", "Logística", "Sobre", "Sair"};
-        
-   JOptionPane.showOptionDialog(null, "Selecione o procedimento desejado.", "Corpo de Bombeiros Militar de Santa Catarina", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null, botões, botões[0]);
-   int resultado = Integer.parseInt(botões.toString());     
-   while (resultado != 4){
-       switch(resultado){
-           case 0: registroBombeiro.cadastroDoBombeiro();
+        JOptionPane.showMessageDialog(null, "Bem-vindo ao painel administrativo do Corpo de Bombeiros Militar de Santa Catarina.");
+        int escolha = Integer.parseInt(JOptionPane.showInputDialog("Menu\n" + "1    -  Registros\n" + "2    -  Logística\n" + "3    -  Sobre\n" + "4    -  Sair"));  
+   while (escolha != 4){
+       switch(escolha){
+           case 1: registroBombeiro.quantidadeCadastroBombeiro();
            break;
        }
        
