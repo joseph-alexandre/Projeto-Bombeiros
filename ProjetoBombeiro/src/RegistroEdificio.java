@@ -12,35 +12,44 @@ import javax.swing.JOptionPane;
  */
 public class RegistroEdificio {
 
-    public void quantidadeEdificios() {
-        int escolha = Integer.parseInt(JOptionPane.showInputDialog("Registros\n" + "1    -  Registro de Bombeiro\n" + "2    -  Registro de Edifício\n" + "3    -  Registro de Ocorrência\n" + "4    -  Editar\n" + "5    -  Sair"));
-        while (escolha != 5) {
-            switch (escolha) {
-                case 2:
-                    int qnt = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de solicitações: "));
+    int qnt = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de solicitações: "));
+    String[] nome = new String[qnt];
+    String[] cpf = new String[qnt];
+    String[] cidade = new String[qnt];
+    String[] rua = new String[qnt];
+    String[] cep = new String[qnt];
+    String[] cnpj = new String[qnt];
+    String[] edificio = new String[qnt];
+    int atual = 0;
 
-                    String[] nome = new String[qnt];
-                    String[] cpf = new String[qnt];
-                    String[] cidade = new String[qnt];
-                    String[] rua = new String[qnt];
-                    String[] cep = new String[qnt];
-                    String[] cnpj = new String[qnt];
-                    String[] captcha = new String[qnt];
+    public void cadastrar() {
+        solicitarInformacao(atual);
+        atual++;
+    }
 
-                    for (int i = 0; i < qnt; i++) {
-                        nome[i] = JOptionPane.showInputDialog("Digite o nome do proprietario do edificil: ");
-                        cpf[i] = JOptionPane.showInputDialog(nome[i] + " digite seu CPF: ")
-                                .replace(".", "").replace("-", "");
-                        cidade[i] = JOptionPane.showInputDialog(nome[i] + " digite a cidade do edificio: ");
-                        rua[i] = JOptionPane.showInputDialog(nome[i] + " digite a rua do edificio: ");
-                        cep[i] = JOptionPane.showInputDialog(nome[i] + " digite o CEP do edificio: ");
-                        cnpj[i] = JOptionPane.showInputDialog(nome[i] + " digite o CNPJ do edificio: ");
-                        captcha[i] = JOptionPane.showInputDialog(nome[i] + " você é um robo? ");
-                        break;
-                    }
-            }
-
-        }
+    public void solicitarInformacao(int posicao) {
+        nome[posicao] = JOptionPane.showInputDialog("Digite o nome do proprietario do edificil: ");
+        cpf[posicao] = JOptionPane.showInputDialog(nome[posicao] + " digite seu CPF: ")
+                .replace(".", "").replace("-", "");
+        cidade[posicao] = JOptionPane.showInputDialog(nome[posicao] + " digite a cidade do edificio: ");
+        rua[posicao] = JOptionPane.showInputDialog(nome[posicao] + " digite a rua do edificio: ");
+        cep[posicao] = JOptionPane.showInputDialog(nome[posicao] + " digite o CEP do edificio: ");
+        cnpj[posicao] = JOptionPane.showInputDialog(nome[posicao] + " digite o CNPJ do edificio: ");
+        edificio[posicao] = JOptionPane.showInputDialog(nome[posicao] + " digite o tipo de edificio: ");
+        
 
     }
+    public void apresentarInformacao(int posicao) {
+        JOptionPane.showMessageDialog(null,
+                "Nome do proprietario: " + nome[posicao]
+                + "CPF do proprio: " + cpf[posicao]
+                + "Cidade do edificio: " + cidade[posicao]
+                + "Rua do edificio: " + rua[posicao]
+                + "CEP do edificio: " + cep[posicao]
+                + "CNPJ do registro: " + cnpj[posicao]
+                + "Tipo de edificio: " + edificio[posicao]);
+
+}
+
+}
 }
