@@ -12,14 +12,14 @@ import javax.swing.JOptionPane;
  * @author Alunos
  */
 public class Sistema {
-    CadastroBombeiro registroBombeiro = new CadastroBombeiro();
+    MenuRegistro menus = new MenuRegistro();
     public void apresentarMenu(){
        
         JOptionPane.showMessageDialog(null, "Bem-vindo ao painel administrativo do Corpo de Bombeiros Militar de Santa Catarina.");
         int escolha = Integer.parseInt(JOptionPane.showInputDialog("Menu\n" + "1    -  Registros\n" + "2    -  Logística\n" + "3    -  Sobre\n" + "4    -  Sair"));  
    while (escolha != 4){
        switch(escolha){
-           case 1: registroBombeiro.quantidadeCadastroBombeiro();
+           case 1: menus.menuRegistro();
            break;
        }
        
