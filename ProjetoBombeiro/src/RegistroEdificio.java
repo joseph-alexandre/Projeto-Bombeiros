@@ -18,14 +18,20 @@ public class RegistroEdificio {
     String[] edificio = new String[100];
     int atual = 0;
 
-//    public void menuRegistroEdificio() {
-//        int escolha = Integer.parseInt(JOptionPane.showInputDialog("Registros\n" + "1    -  Registro de Bombeiro\n" + "2    -  Registro de Edifício\n" + "3    -  Registro de Ocorrência\n" + "4    -  Editar\n" + "5    -  Sair"));
-//        while (escolha != 5) {
-//            switch (escolha) {
-//                case 1:
-//            }
-//        }
-//    }
+    SolicitacaoRegistro registroEdificio = new SolicitacaoRegistro();
+    public void menuRegistroEdificio() {
+        int escolha = Integer.parseInt(JOptionPane.showInputDialog("Registros\n" + "1     -  Continuar solicitação de vistoria" + "\n2     -  Editar solicitação" + "\n5     -  Sair"));
+        while (escolha != 3) {
+            switch (escolha) {
+                case 1:
+                    registroEdificio.cadastrar();
+                    break;
+                case 2:
+                    registroEdificio.editar();
+                    break;
+            }
+        }
+    }
     public void cadastrar() {
         solicitarInformacao(atual);
         atual++;
