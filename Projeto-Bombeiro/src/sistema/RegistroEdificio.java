@@ -8,13 +8,13 @@ import javax.swing.JOptionPane;
  */
 public class RegistroEdificio {
 
-    String[] nome = new String[1];
-    String[] cpf = new String[1];
-    String[] cidade = new String[1];
-    String[] rua = new String[1];
-    String[] cep = new String[1];
-    String[] cnpj = new String[1];
-        String[] edificio = new String[1];
+    String[] nome = new String[100];
+    String[] cpf = new String[100];
+    String[] cidade = new String[100];
+    String[] rua = new String[100];
+    String[] cep = new String[100];
+    String[] cnpj = new String[100];
+        String[] edificio = new String[100];
     int atual = 0;
 
     public void cadastrar() {
