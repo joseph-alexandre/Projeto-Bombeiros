@@ -1,3 +1,4 @@
+package sistema;
 
 import javax.swing.JOptionPane;
 
@@ -8,30 +9,18 @@ import javax.swing.JOptionPane;
 public class RegistroEdificio {
 
     //int qnt = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de solicitações: "));
-    String[] nome = new String[100];
-    String[] cpf = new String[100];
-    String[] cidade = new String[100];
-    String[] rua = new String[100];
-    String[] cep = new String[100];
-    String[] cnpj = new String[100];
-    String[] nomeEdificio = new String[100];
-    String[] edificio = new String[100];
+    String[] nome = new String[1];
+    String[] cpf = new String[1];
+    String[] cidade = new String[1];
+    String[] rua = new String[1];
+    String[] cep = new String[1];
+    String[] cnpj = new String[1];
+    String[] nomeEdificio = new String[1];
+    String[] edificio = new String[1];
     int atual = 0;
 
-    SolicitacaoRegistro registroEdificio = new SolicitacaoRegistro();
-    public void menuRegistroEdificio() {
-        int escolha = Integer.parseInt(JOptionPane.showInputDialog("Registros\n" + "1     -  Continuar solicitação de vistoria" + "\n2     -  Editar solicitação" + "\n5     -  Sair"));
-        while (escolha != 3) {
-            switch (escolha) {
-                case 1:
-                    registroEdificio.cadastrar();
-                    break;
-                case 2:
-                    registroEdificio.editar();
-                    break;
-            }
-        }
-    }
+    
+   
     public void cadastrar() {
         solicitarInformacao(atual);
         atual++;
@@ -49,7 +38,7 @@ public class RegistroEdificio {
     }
 
     public void solicitarInformacao(int posicao) {
-        nome[posicao] = JOptionPane.showInputDialog("Digite o nome do proprietario do edificil: ");
+        nome[posicao] = JOptionPane.showInputDialog("Digite o nome do proprietario do edificio: ");
         cpf[posicao] = JOptionPane.showInputDialog(nome[posicao] + " digite seu CPF: ")
                 .replace(".", "").replace("-", "");
         cidade[posicao] = JOptionPane.showInputDialog(nome[posicao] + " digite a cidade do edificio: ");

@@ -6,3 +6,10 @@ ProjetoBombeiro/nbproject/build-impl.xml
 ProjetoBombeiro/manifest.mf
 ProjetoBombeiro/build.xml
 /ProjetoBombeiro/build/
+*.xml
+Projeto-Bombeiro/build/classes/.netbeans_automatic_build
+Projeto-Bombeiro/build/classes/.netbeans_update_resources
+Projeto-Bombeiro/build/classes/sistema/MenuRegistro.class
+*.class
+*.mf
+*.properties
