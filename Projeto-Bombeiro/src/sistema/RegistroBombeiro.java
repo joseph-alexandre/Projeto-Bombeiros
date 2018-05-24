@@ -4,14 +4,14 @@ import javax.swing.JOptionPane;
 public class RegistroBombeiro {
  
        //int quantidadeRegistros = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de bombeiro(a) que deseja cadastrar."));
-       String[] nomes = new String[1];
-       int[] idades = new int[1];
-       double[] alturas = new double[1];
-       double[] pesos = new double[1];
-       String[] batalhoes = new String [1];
-       String[] regioes = new String [1];
-       String[] cargos = new String [1];
-       char[] sexo = new char [1];
+       String[] nomes = new String[100];
+       int[] idades = new int[100];
+       double[] alturas = new double[100];
+       double[] pesos = new double[100];
+       String[] batalhoes = new String [100];
+       String[] regioes = new String [100];
+       String[] cargos = new String [100];
+       char[] sexo = new char [100];
        int atual = 0;
        
        public void cadastrar(){
