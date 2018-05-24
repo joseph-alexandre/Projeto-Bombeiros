@@ -19,22 +19,38 @@ public class RegistroEdificio {
     String[] edificio = new String[1];
     int atual = 0;
 
-    
-   
     public void cadastrar() {
         solicitarInformacao(atual);
         atual++;
     }
 
-    public void editar() {
-        String busca = JOptionPane.showInputDialog("Digite o nome do edificio para editar: ");
+    public void editarEdificio() {
+        Object[] nomesEdificios = new Object[atual];
         for (int i = 0; i < atual; i++) {
-            if (nomeEdificio[i].equalsIgnoreCase(busca)) {
-                solicitarInformacao(i);
-                return;
-            }
-            JOptionPane.showMessageDialog(null, "Nome não encontrado.");
+            nomesEdificios[i] = nomeEdificio[i];
         }
+
+        int posicao = JOptionPane.showOptionDialog(null,
+                atual > 0 ? "Selecione a solicitação para editar"
+                        : "Nenhuma solicitação cadastrada",
+                "Aviso,",
+                0, JOptionPane.QUESTION_MESSAGE, null, nomesEdificios, "");
+                
+        if (posicao != JOptionPane.CLOSED_OPTION) {
+            solicitarInformacao(posicao);
+        }
+    }
+
+    public void listarEdificios() {
+        String texto = "";
+        if (atual > 0) {
+            for (int posicao = 0; posicao < atual; posicao++) {
+                texto += nomeEdificio[posicao] + "\n";
+            }
+        } else {
+            texto = "Nenhuma solicitação está cadastrada!";
+        }
+        JOptionPane.showMessageDialog(null, texto);
     }
 
     public void solicitarInformacao(int posicao) {
