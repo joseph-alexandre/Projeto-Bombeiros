@@ -12,34 +12,31 @@ public class MenuRegistroEdificio {
 
     public void menuRegistroEdificio() {
 
-        int escolha = JOptionPane.showOptionDialog(null, "MENU DAS SOLICITAÇÕES PARA AUTO DE VISTORIA DO CORPO DE BOMBEIROS", "", 0, 0, null,
-                new Object[]{
-                    "Cadastrar", "Listar Solicitações", "Editar Solicitações", "Sair"
-                }, "Listar Solicitações");
-        return;
-    }
-
-    public void gerirMenu() {
-        int menu = JOptionPane.showOptionDialog(null, "MENU DAS SOLICITAÇÕES PARA AUTO DE VISTORIA DO CORPO DE BOMBEIROS", "",0, JOptionPane.INFORMATION_MESSAGE, null,
-                new Object[]{
-                    "Cadastrar", "Listar Solicitações", "Editar Solicitações", "Sair"
-                }, "Listar Solicitações");;
-
+        int menu = Integer.parseInt(JOptionPane.showInputDialog("Menu das Solicitações para Auto Vistoria\n"
+                + "1    -  Cadastrar\n"
+                + "2    -  Listar Solicitações\n"
+                + "3    -  Editar Solicitações\n"
+                + "4    -  Listar."));
+        while (menu != 4) {
             switch (menu) {
-                case 0:
+                case 1:
                     menuEdificio.cadastrar();
                     break;
-                case 1:
+                case 2:
                     menuEdificio.listarEdificios();
                     break;
-                case 2:
+                case 3:
                     menuEdificio.editarEdificio();
                     break;
-              
-                //return menuRegistroBombeiro.class;
-
+                
+            }
+            menu = Integer.parseInt(JOptionPane.showInputDialog("Menu das Solicitações para Auto Vistoria\n"
+                + "1    -  Cadastrar\n"
+                + "2    -  Listar Solicitações\n"
+                + "3    -  Editar Solicitações\n"
+                + "4    -  Retornar"));
+            
         }
     }
 
 }
-
