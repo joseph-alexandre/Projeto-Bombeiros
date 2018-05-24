@@ -12,11 +12,11 @@ public class MenuRegistroEdificio {
 
     public void menuRegistroEdificio() {
 
-        int menu = Integer.parseInt(JOptionPane.showInputDialog("Menu das Solicitações para Auto Vistoria\n"
-                + "1    -  Cadastrar\n"
-                + "2    -  Listar Solicitações\n"
-                + "3    -  Editar Solicitações\n"
-                + "4    -  Listar."));
+        int menu = Integer.parseInt(JOptionPane.showInputDialog("Menu do registro de Edifício\n"
+                + "1    -  Cadastrar o Edifício\n"
+                + "2    -  Listar cadastros\n"
+                + "3    -  Editar cadastros\n"
+                + "4    -  Retornar"));
         while (menu != 4) {
             switch (menu) {
                 case 1:
@@ -30,10 +30,10 @@ public class MenuRegistroEdificio {
                     break;
                 
             }
-            menu = Integer.parseInt(JOptionPane.showInputDialog("Menu das Solicitações para Auto Vistoria\n"
-                + "1    -  Cadastrar\n"
-                + "2    -  Listar Solicitações\n"
-                + "3    -  Editar Solicitações\n"
+            menu = Integer.parseInt(JOptionPane.showInputDialog("Menu do registro de Edifício\n"
+                + "1    -  Cadastrar o Edifício\n"
+                + "2    -  Listar cadastros\n"
+                + "3    -  Editar cadastros\n"
                 + "4    -  Retornar"));
             
         }

@@ -1,16 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package sistema;
 import javax.swing.JOptionPane;
 public class MenuRegistroBombeiro {
     RegistroBombeiro menuBombeiro = new RegistroBombeiro();
     
+    
     public void menuRegistroBombeiro(){
-         int escolha = Integer.parseInt(JOptionPane.showInputDialog("Registro de Bombeiro\n" + "1    -  Registrar Bombeiro\n" + "2    -  Editar\n" + "3    -  Listar\n" + "4    -  Contabilizar pelo nome\n" + "5    -  Buscar pelo nome\n" + "6    -  Buscar pelo batalhão\n" + "7    -  Retornar" ));
-       while(escolha != 7){
+         int escolha = Integer.parseInt(JOptionPane.showInputDialog("Registro de Bombeiro\n" + "1    -  Registrar Bombeiro\n" + "2    -  Editar\n" + "3    -  Listar\n" + "4    -  Contabilizar pelo nome\n" + "5    -  Buscar pelo nome\n" + "6    -  Buscar pelo batalhão\n" + "7    -  Buscar por cargo\n" + "8    -  Retornar"));
+       while(escolha != 8){
            switch(escolha){
                case 1: menuBombeiro.cadastrar();
            break;
@@ -24,9 +21,14 @@ public class MenuRegistroBombeiro {
            break;
                case 6: menuBombeiro.buscarPorBatalhao();
            break;
+               case 7: menuBombeiro.buscarPorCargo();
+           break;
+               
                
     }
-           escolha = Integer.parseInt(JOptionPane.showInputDialog("Registro de Bombeiro\n" + "1    -  Registrar Bombeiro\n" + "2    -  Editar\n" + "3    -  Listar\n" + "4    -  Contabilizar pelo nome\n" + "5    -  Buscar pelo nome\n" + "6    -  Buscar pelo batalhão\n" + "7    -  Retornar" ));
+           
+escolha = Integer.parseInt(JOptionPane.showInputDialog("Registro de Bombeiro\n" + "1    -  Registrar Bombeiro\n" + "2    -  Editar\n" + "3    -  Listar\n" + "4    -  Contabilizar pelo nome\n" + "5    -  Buscar pelo nome\n" + "6    -  Buscar pelo batalhão\n" + "7    -  Buscar por cargo\n" + "8    -  Retornar" ));
+           
 
     
 }

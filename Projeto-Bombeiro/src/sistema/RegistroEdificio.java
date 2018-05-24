@@ -23,7 +23,7 @@ public class RegistroEdificio {
     }
 
     public void editarEdificio() {
-        String busca = JOptionPane.showInputDialog("Digite o nome do edificio para solicitação: ");
+        String busca = JOptionPane.showInputDialog("Digite o nome do edifício para solicitação: ");
         for (int i = 0; i < atual; i++) {
             if (edificio[i].equalsIgnoreCase(busca)) {
                 solicitarInformacao(i);
@@ -41,14 +41,14 @@ public class RegistroEdificio {
     }
 
     public void solicitarInformacao(int posicao) {
-        nome[posicao] = JOptionPane.showInputDialog("Digite o nome do proprietario do edificio: ");
+        nome[posicao] = JOptionPane.showInputDialog("Digite o nome do proprietario do edifício: ");
         cpf[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite seu CPF: ")
                 .replace(".", "").replace("-", "");
-        cidade[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite a cidade do edificio: ");
-        rua[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite a rua do edificio: ");
-        cep[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite o CEP do edificio: ");
-        cnpj[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite o CNPJ do edificio: ");
-        edificio[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite o tipo de edificio: ");
+        cidade[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite a cidade do edifício: ");
+        rua[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite a rua do edifício: ");
+        cep[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite o CEP do edifício: ");
+        cnpj[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite o CNPJ do edifício: ");
+        edificio[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite o tipo de edifício: ");
 
     }
 
