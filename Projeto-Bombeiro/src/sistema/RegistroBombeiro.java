@@ -3,7 +3,10 @@ package sistema;
 import javax.swing.JOptionPane;
 public class RegistroBombeiro {
  
-       //int quantidadeRegistros = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de bombeiro(a) que deseja cadastrar."));
+ /**
+ *
+ * @author Joseph
+ */
        String[] nomes = new String[100];
        int[] idades = new int[100];
        double[] alturas = new double[100];

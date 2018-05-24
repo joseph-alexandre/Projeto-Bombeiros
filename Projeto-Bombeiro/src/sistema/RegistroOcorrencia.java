@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 package sistema;
-import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author Alunos
+ * @author Joseph
  */
 public class RegistroOcorrencia {
            
