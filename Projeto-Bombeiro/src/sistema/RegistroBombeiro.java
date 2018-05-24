@@ -15,6 +15,8 @@ public class RegistroBombeiro {
        int atual = 0;
        
        public void cadastrar(){
+       
+       
            solicitarInformacao(atual);
            atual++;
        }
@@ -39,13 +41,13 @@ public class RegistroBombeiro {
        public void contabilizarPeloNome(){
            String busca = JOptionPane.showInputDialog("Digite o nome parcial do bombeiro(a) para a busca.");
            int quantidadeRegistros = 0;
-           for (int i = 0; i < quantidadeRegistros; i++) {
+           for (int i = 0; i < atual; i++) {
                if(nomes[i].contains(busca)){
                quantidadeRegistros++;
            }
                
            }
-           JOptionPane.showMessageDialog(null, "A quantidade de " + busca + "cadastrados é: " +quantidadeRegistros);
+           JOptionPane.showMessageDialog(null, "A quantidade de " + busca + "cadastrados é: " + quantidadeRegistros++);
        }
        public void buscarPeloNome(){
            String busca = JOptionPane.showInputDialog("Digite o nome parcial do bombeiro(a) para a busca.");
@@ -70,6 +72,16 @@ public class RegistroBombeiro {
 
        }
 
+       public void buscarPorCargo(){
+           String cargoBuscado = JOptionPane.showInputDialog("Digite o cargo pertencente do bombeiro(a).");
+           
+           for (int i = 0; i < atual; i++){
+               if(cargos[i].equals(cargoBuscado)){
+                   apresentarInformacao(i);
+                   return;
+               }
+           }
+       }
        
         public void apresentarInformacao(int posicao){
             JOptionPane.showMessageDialog(null, "Nome: " + nomes[posicao] +

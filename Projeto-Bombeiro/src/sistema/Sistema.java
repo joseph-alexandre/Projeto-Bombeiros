@@ -6,7 +6,7 @@ public class Sistema {
     MenuRegistro menus = new MenuRegistro();
     RegistroBombeiro registroBombeiro = new RegistroBombeiro();
     RegistroEdificio cadastroEdificio = new RegistroEdificio();
-    MenuRegistroBombeiro aux = new MenuRegistroBombeiro();
+    MenuOcorrencia menuOcorrencia = new MenuOcorrencia();
     public void apresentarMenu(){
 
     
@@ -19,8 +19,9 @@ public class Sistema {
        switch(escolha){
            case 1: menus.menuRegistro();
            break;
-           case 2: 
+           case 2:
            break;
+           default: JOptionPane.showMessageDialog(null, "Opção inválida.");
        }
        
             escolha = Integer.parseInt(JOptionPane.showInputDialog("Menu\n" + "1    -  Registros\n" + "2    -  Logística\n" + "3    -  Sobre\n" + "4    -  Sair"));  
