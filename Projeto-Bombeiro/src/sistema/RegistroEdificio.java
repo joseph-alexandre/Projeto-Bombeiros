@@ -23,6 +23,10 @@ public class RegistroEdificio {
         solicitarInformacao(atual);
         atual++;
     }
+    
+    public void cadastrarSolicitacao() {
+        
+    }
 
     public void editarEdificio() {
         Object[] nomesEdificios = new Object[atual];
@@ -34,9 +38,9 @@ public class RegistroEdificio {
                 atual > 0 ? "Selecione a solicitação para editar"
                         : "Nenhuma solicitação cadastrada",
                 "Aviso,",
-                0, JOptionPane.QUESTION_MESSAGE, null, nomesEdificios, "");
+                0, JOptionPane.OK_OPTION, null, nomesEdificios, "");
                 
-        if (posicao != JOptionPane.CLOSED_OPTION) {
+        if (posicao != JOptionPane.OK_OPTION) {
             solicitarInformacao(posicao);
         }
     }
