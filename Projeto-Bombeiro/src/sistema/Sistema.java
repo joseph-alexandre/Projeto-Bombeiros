@@ -11,7 +11,7 @@ public class Sistema {
     MenuRegistro menus = new MenuRegistro();
     RegistroBombeiro registroBombeiro = new RegistroBombeiro();
     RegistroEdificio cadastroEdificio = new RegistroEdificio();
-
+    MenuAVCB menusAvcb = new MenuAVCB();
     MenuOcorrencia menuOcorrencia = new MenuOcorrencia();
     
 
@@ -27,7 +27,7 @@ public class Sistema {
        switch(escolha){
            case 1: menus.menuRegistro();
            break;
-           case 2:
+           case 2: menusAvcb.RegistroAvcb();
            break;
            default: JOptionPane.showMessageDialog(null, "Opção inválida.");
        }

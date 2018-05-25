@@ -28,6 +28,7 @@ public class MenuRegistroEdificio {
                 case 3:
                     menuEdificio.editarEdificio();
                     break;
+                    default: JOptionPane.showMessageDialog(null, "Opção inválida.");
                 
             }
             menu = Integer.parseInt(JOptionPane.showInputDialog("Menu do registro de Edifício\n"
