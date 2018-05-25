@@ -39,9 +39,9 @@ public class RegistroAvcb {
     public void listar() {
         String texto = "";
         for (int i = 0; i < atual; i++) {
-            texto += nomeEdificio[i] 
-                    + "     -     Edificio do sr(a)     -     " 
-                    + nomeDono[i] + "      -       " 
+            texto += nomeEdificio[i]
+                    + "     -     Edificio do sr(a)     -     "
+                    + nomeDono[i] + "      -       "
                     + Liberado[i] + "\n";
         }
         JOptionPane.showMessageDialog(null, texto);

@@ -1,5 +1,6 @@
 package sistema;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -8,13 +9,12 @@ import javax.swing.JOptionPane;
  */
 public class About {
 
-    
-        public void Sobre() {
+    public void Sobre() {
 
-        JOptionPane.showMessageDialog(null, "CORPO DE BOMBEIROS MILITAR DE SANTA CATARINA.\n"
-                + "VIDA ALHEIA E RIQUEZAS Á SALVAR!\n"
-                + "193 - Bombeiros");
-        
-        
+        JOptionPane.showMessageDialog(null, "VIDA ALHEIA E RIQUEZAS Á SALVAR!\n\n"
+                + "193 - Bombeiros", "CORPO DE BOMBEIROS MILITAR DE SANTA CATARINA",
+                0,
+                new ImageIcon(Sistema.class.getResource("emergency-call.png")));
+
     }
 }
