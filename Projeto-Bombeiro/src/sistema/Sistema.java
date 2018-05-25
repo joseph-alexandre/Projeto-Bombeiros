@@ -13,6 +13,7 @@ public class Sistema {
     RegistroEdificio cadastroEdificio = new RegistroEdificio();
     MenuAVCB menusAvcb = new MenuAVCB();
     MenuOcorrencia menuOcorrencia = new MenuOcorrencia();
+    About sobre = new About();
     
 
     
@@ -29,7 +30,12 @@ public class Sistema {
            break;
            case 2: menusAvcb.RegistroAvcb();
            break;
-           default: JOptionPane.showMessageDialog(null, "Opção inválida.");
+           case 3: sobre.Sobre();
+           break;
+           default: JOptionPane.showMessageDialog(null, 
+                   "Escolha outra opção!", 
+                   "Opção inválida", 
+                   JOptionPane.ERROR_MESSAGE);
        }
        
             escolha = Integer.parseInt(JOptionPane.showInputDialog("Menu\n" + "1    -  Registros\n" + "2    -  Solicitação do AVCB\n" + "3    -  Sobre\n" + "4    -  Sair"));  

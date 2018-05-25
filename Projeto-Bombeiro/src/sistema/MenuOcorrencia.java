@@ -28,6 +28,10 @@ public class MenuOcorrencia {
            break;
                case 6: menu.buscarPorGravidade();
            break;
+               default: JOptionPane.showMessageDialog(null, 
+                       "Escolha outra opção!", 
+                       "Opção inválida", 
+                       JOptionPane.ERROR_MESSAGE);
                
                
                

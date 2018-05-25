@@ -21,7 +21,10 @@ public class MenuRegistro {
                     menuRegistroEdificio.menuRegistroEdificio();
                     break;
                 case 3: menuOcorrencia.menuOcorrencia();
-                
+                default: JOptionPane.showMessageDialog(null, 
+                        "Escolha outra opção!", 
+                        "Opção inválida", 
+                        JOptionPane.ERROR_MESSAGE);
 
             }
  escolha = Integer.parseInt(JOptionPane.showInputDialog("Registros\n" + "1    -  Registro de Bombeiro\n" + "2    -  Registro de Edifício\n" + "3    -  Registro de Ocorrência\n" + "4    -  Retornar"));           

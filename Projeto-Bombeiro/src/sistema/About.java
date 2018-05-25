@@ -1,14 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistema;
+
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Alunos
  */
 public class About {
+
     
+        public void Sobre() {
+
+        JOptionPane.showMessageDialog(null, "CORPO DE BOMBEIROS MILITAR DE SANTA CATARINA.\n"
+                + "VIDA ALHEIA E RIQUEZAS Á SALVAR!\n"
+                + "193 - Bombeiros");
+        
+        
+    }
 }

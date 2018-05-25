@@ -23,6 +23,10 @@ public class MenuRegistroBombeiro {
            break;
                case 7: menuBombeiro.buscarPorCargo();
            break;
+               default: JOptionPane.showMessageDialog(null, 
+                       "Escolha outra opção!", 
+                       "Opção inválida", 
+                       JOptionPane.ERROR_MESSAGE);
                
                
     }
