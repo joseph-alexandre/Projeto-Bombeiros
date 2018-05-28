@@ -32,15 +32,24 @@ public class RegistroEdificio {
             }
         }
     }
-    
-    public void buscarPeloNome(){
-           String busca = JOptionPane.showInputDialog("Digite o nome do edificio registrado: ");
-           for (int i = 0; i < atual; i++) {
-               if(edificio[i].contains(busca)){
-                   apresentarInformacao(i);
-                   return;
-               }
-           }
+
+    public void buscarPeloNome() {
+        String busca = JOptionPane.showInputDialog("Digite o nome do edificio registrado: ");
+        for (int i = 0; i < atual; i++) {
+            if (nomeEdificio[i].contains(busca)) {
+                JOptionPane.showMessageDialog(null,
+                        "Nome do proprietário: " + nome[i] 
+                        + "\nCpf: " + cpf[i]
+                        + "\nCidade do edificio: " + cidade[i])
+                        + "\nRua do edificio: " + rua[i]
+                        + "\nCEP: " + cep[i]
+                        + "\nCNPJ: " + cnpj[i]
+                        + "\nTipo de edificio: " + edificio[i]
+                        + "\nNome fantasia do edificio: " + nomeEdificio[i]);
+                                
+              
+            }
+        }
     }
 
     public void listarEdificios() {
