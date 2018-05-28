@@ -13,3 +13,5 @@ Projeto-Bombeiro/build/classes/sistema/MenuRegistro.class
 *.class
 *.mf
 *.properties
+/Projeto-Bombeiro/nbproject/private/
+/Projeto-Bombeiro/build/
