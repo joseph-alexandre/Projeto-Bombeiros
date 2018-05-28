@@ -14,7 +14,7 @@ public class RegistroEdificio {
     String[] rua = new String[100];
     String[] cep = new String[100];
     String[] cnpj = new String[100];
-        String[] edificio = new String[100];
+    String[] edificio = new String[100];
     int atual = 0;
 
     public void cadastrar() {
