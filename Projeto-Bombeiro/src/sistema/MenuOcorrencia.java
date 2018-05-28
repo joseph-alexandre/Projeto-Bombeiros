@@ -1,6 +1,7 @@
 
 package sistema;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,7 +14,17 @@ public class MenuOcorrencia {
     
     
     
-         int escolha = Integer.parseInt(JOptionPane.showInputDialog("Registro de Ocorrência\n" + "1    -  Cadastrar ocorrência\n" + "2    -  Editar\n" + "3    -  Listar\n" + "4    -  Contabilizar pelo tipo de incidente\n" + "5    -  Buscar pelo nome cadastrado\n" + "6    -  Buscar por grau de gravidade\n" + "7    -  Retornar"));
+         int escolha = Integer.parseInt(JOptionPane.showInputDialog(null, "Registro de Ocorrência\n" 
+        + "1    -  Cadastrar ocorrência\n" 
+        + "2    -  Editar\n" + "3    -  Listar\n" 
+        + "4    -  Contabilizar pelo tipo de incidente\n" 
+        + "5    -  Buscar pelo nome cadastrado\n" 
+        + "6    -  Buscar por grau de gravidade\n" 
+        + "7    -  Retornar",
+        "MENU OCORRENCIAS",
+        0, 
+        new ImageIcon(Sistema.class.getResource("first-aid-kit.png")),
+        null, null).toString());
        while(escolha != 7){
            switch(escolha){
                case 1: menu.cadastrar();
@@ -37,7 +48,18 @@ public class MenuOcorrencia {
                
     }
            
-escolha = Integer.parseInt(JOptionPane.showInputDialog("Registro de Ocorrência\n" + "1    -  Cadastrar ocorrência\n" + "2    -  Editar\n" + "3    -  Listar\n" + "4    -  Contabilizar pelo tipo de incidente\n" + "5    -  Buscar pelo nome cadastrado\n" + "6    -  Buscar por grau de gravidade\n" + "7    -  Retornar"));
+escolha = Integer.parseInt(JOptionPane.showInputDialog(null, "Registro de Ocorrência\n" 
+        + "1    -  Cadastrar ocorrência\n" 
+        + "2    -  Editar\n" 
+        + "3    -  Listar\n" 
+        + "4    -  Contabilizar pelo tipo de incidente\n" 
+        + "5    -  Buscar pelo nome cadastrado\n" 
+        + "6    -  Buscar por grau de gravidade\n" 
+        + "7    -  Retornar",
+        "MENU OCORRENCIAS",
+        0, 
+        new ImageIcon(Sistema.class.getResource("first-aid-kit.png")),
+        null, null).toString());
            
 
     

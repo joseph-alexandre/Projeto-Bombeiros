@@ -1,12 +1,25 @@
 
 package sistema;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 public class MenuRegistroBombeiro {
     RegistroBombeiro menuBombeiro = new RegistroBombeiro();
     
     
     public void menuRegistroBombeiro(){
-         int escolha = Integer.parseInt(JOptionPane.showInputDialog("Registro de Bombeiro\n" + "1    -  Registrar Bombeiro\n" + "2    -  Editar\n" + "3    -  Listar\n" + "4    -  Contabilizar pelo nome\n" + "5    -  Buscar pelo nome\n" + "6    -  Buscar pelo batalhão\n" + "7    -  Buscar por cargo\n" + "8    -  Retornar"));
+         int escolha = Integer.parseInt(JOptionPane.showInputDialog(null,
+                 "Registro de Bombeiro\n" 
+                 + "1    -  Registrar Bombeiro\n" 
+                 + "2    -  Editar\n" 
+                 + "3    -  Listar\n" 
+                 + "4    -  Contabilizar pelo nome\n" 
+                 + "5    -  Buscar pelo nome\n" 
+                 + "6    -  Buscar pelo batalhão\n" 
+                 + "7    -  Buscar por cargo\n" 
+                 + "8    -  Retornar",
+                 "MENU BOMBEIROS", 0,
+                 new ImageIcon(Sistema.class.getResource("fireman.pn")),
+                 null, null).toString());
        while(escolha != 8){
            switch(escolha){
                case 1: menuBombeiro.cadastrar();
@@ -31,7 +44,19 @@ public class MenuRegistroBombeiro {
                
     }
            
-escolha = Integer.parseInt(JOptionPane.showInputDialog("Registro de Bombeiro\n" + "1    -  Registrar Bombeiro\n" + "2    -  Editar\n" + "3    -  Listar\n" + "4    -  Contabilizar pelo nome\n" + "5    -  Buscar pelo nome\n" + "6    -  Buscar pelo batalhão\n" + "7    -  Buscar por cargo\n" + "8    -  Retornar" ));
+escolha = Integer.parseInt(JOptionPane.showInputDialog(null,
+                 "Registro de Bombeiro\n" 
+                 + "1    -  Registrar Bombeiro\n" 
+                 + "2    -  Editar\n" 
+                 + "3    -  Listar\n" 
+                 + "4    -  Contabilizar pelo nome\n" 
+                 + "5    -  Buscar pelo nome\n" 
+                 + "6    -  Buscar pelo batalhão\n" 
+                 + "7    -  Buscar por cargo\n" 
+                 + "8    -  Retornar",
+                 "MENU BOMBEIROS", 0,
+                 new ImageIcon(Sistema.class.getResource("fireman.pn")),
+                 null, null).toString());
            
 
     

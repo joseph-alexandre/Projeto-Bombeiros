@@ -1,5 +1,6 @@
 package sistema;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,11 +13,15 @@ public class MenuRegistroEdificio {
 
     public void menuRegistroEdificio() {
 
-        int menu = Integer.parseInt(JOptionPane.showInputDialog("Menu do registro de Edifício\n"
+        int menu = Integer.parseInt(JOptionPane.showInputDialog(null, "Menu do registro de Edifício\n"
                 + "1    -  Cadastrar o Edifício\n"
                 + "2    -  Listar cadastros\n"
                 + "3    -  Editar cadastros\n"
-                + "4    -  Retornar"));
+                + "4    -  Retornar",
+                "MENU EDIFICIOS",
+                0,
+                new ImageIcon(Sistema.class.getResource("burning-building.png")),
+                null, null).toString());
         while (menu != 4) {
             switch (menu) {
                 case 1:
@@ -28,18 +33,23 @@ public class MenuRegistroEdificio {
                 case 3:
                     menuEdificio.editarEdificio();
                     break;
-                    default: JOptionPane.showMessageDialog(null, 
-                            "Escolha outra opção!", 
-                            "Opção inválida", 
+                default:
+                    JOptionPane.showMessageDialog(null,
+                            "Escolha outra opção!",
+                            "Opção inválida",
                             JOptionPane.ERROR_MESSAGE);
-                
+
             }
-            menu = Integer.parseInt(JOptionPane.showInputDialog("Menu do registro de Edifício\n"
-                + "1    -  Cadastrar o Edifício\n"
-                + "2    -  Listar cadastros\n"
-                + "3    -  Editar cadastros\n"
-                + "4    -  Retornar"));
-            
+            menu = Integer.parseInt(JOptionPane.showInputDialog(null, "Menu do registro de Edifício\n"
+                    + "1    -  Cadastrar o Edifício\n"
+                    + "2    -  Listar cadastros\n"
+                    + "3    -  Editar cadastros\n"
+                    + "4    -  Retornar",
+                    "MENU EDIFICIOS",
+                    0,
+                    new ImageIcon(Sistema.class.getResource("burning-building.png")),
+                    null, null).toString());
+
         }
     }
 
