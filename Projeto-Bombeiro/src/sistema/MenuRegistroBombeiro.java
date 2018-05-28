@@ -18,7 +18,7 @@ public class MenuRegistroBombeiro {
                  + "7    -  Buscar por cargo\n" 
                  + "8    -  Retornar",
                  "MENU BOMBEIROS", 0,
-                 new ImageIcon(Sistema.class.getResource("fireman.pn")),
+                 new ImageIcon(Sistema.class.getResource("fireman.png")),
                  null, null).toString());
        while(escolha != 8){
            switch(escolha){
