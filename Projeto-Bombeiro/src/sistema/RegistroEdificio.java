@@ -15,6 +15,7 @@ public class RegistroEdificio {
     String[] cep = new String[100];
     String[] cnpj = new String[100];
     String[] edificio = new String[100];
+    String[] nomeEdificio = new String[100];
     int atual = 0;
 
     public void cadastrar() {
@@ -26,10 +27,20 @@ public class RegistroEdificio {
         String busca = JOptionPane.showInputDialog("Digite o nome do edifício para solicitação: ");
         for (int i = 0; i < atual; i++) {
             if (edificio[i].equalsIgnoreCase(busca)) {
-                solicitarInformacao(i);
+                apresentarInformacao(i);
                 return;
             }
         }
+    }
+    
+    public void buscarPeloNome(){
+           String busca = JOptionPane.showInputDialog("Digite o nome do edificio registrado: ");
+           for (int i = 0; i < atual; i++) {
+               if(edificio[i].contains(busca)){
+                   apresentarInformacao(i);
+                   return;
+               }
+           }
     }
 
     public void listarEdificios() {

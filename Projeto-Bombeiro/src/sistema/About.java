@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Alunos
+ * @author Alan
  */
 public class About {
 
