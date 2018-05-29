@@ -44,7 +44,11 @@ public class MenuRegistroBombeiro {
                
     }
            
-escolha = Integer.parseInt(JOptionPane.showInputDialog(null,
+
+           
+
+
+  escolha = Integer.parseInt(JOptionPane.showInputDialog(null,
                  "Registro de Bombeiro\n" 
                  + "1    -  Registrar Bombeiro\n" 
                  + "2    -  Editar\n" 
@@ -55,11 +59,10 @@ escolha = Integer.parseInt(JOptionPane.showInputDialog(null,
                  + "7    -  Buscar por cargo\n" 
                  + "8    -  Retornar",
                  "MENU BOMBEIROS", 0,
-                 new ImageIcon(Sistema.class.getResource("fireman.pn")),
+                 new ImageIcon(Sistema.class.getResource("fireman.png")),
                  null, null).toString());
-           
-
-    
-}
+                
+       }
+       
     }
 }
