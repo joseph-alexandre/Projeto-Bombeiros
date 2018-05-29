@@ -23,7 +23,7 @@ public class MenuRegistroEdificio {
                 0,
                 new ImageIcon(Sistema.class.getResource("burning-building.png")),
                 null, null).toString());
-        while (menu != 5) {
+        while (menu != 4) {
             switch (menu) {
                 case 1:
                     menuEdificio.cadastrar();
@@ -34,9 +34,7 @@ public class MenuRegistroEdificio {
                 case 3:
                     menuEdificio.editarEdificio();
                     break;
-                case 4:
-                    menuEdificio.buscarPeloNome();
-                    break;
+                
                 default:
                     JOptionPane.showMessageDialog(null,
                             "Escolha outra opção!",
@@ -48,7 +46,6 @@ public class MenuRegistroEdificio {
                     + "1    -  Cadastrar o Edifício\n"
                     + "2    -  Listar cadastros\n"
                     + "3    -  Editar cadastros\n"
-                    + "4    -  Buscar por nome do edificio\n"
                     + "5    -  Retornar",
                     "MENU EDIFICIOS",
                     0,
