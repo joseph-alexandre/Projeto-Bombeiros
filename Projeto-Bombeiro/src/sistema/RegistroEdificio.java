@@ -32,6 +32,15 @@ public class RegistroEdificio {
             }
         }
     }
+    public void buscarPeloEdificio(){
+        String busca = JOptionPane.showInputDialog("Digite o nome parcial do bombeiro(a) para a busca.");
+        for (int i = 0; i < atual; i++) {
+            if (nomeEdificio[i].contains(busca)) {
+                apresentarInformacao(i);
+            }
+
+        }
+    }
 
     public void listarEdificios() {
         String texto = "";
