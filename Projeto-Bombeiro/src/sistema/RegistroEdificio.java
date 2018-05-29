@@ -36,7 +36,7 @@ public class RegistroEdificio {
     public void listarEdificios() {
         String texto = "";
         for (int i = 0; i < atual; i++) {
-            texto += edificio[i] + "      -       " + nome[i] + "\n";
+            texto += edificio[i] + "," + nome[i] + "\n";
         }
         JOptionPane.showMessageDialog(null, texto);
     }
