@@ -53,13 +53,13 @@ public class RegistroBombeiro {
             }
 
         }
+        
         JOptionPane.showMessageDialog(null,
                 "A quantidade de "
                 + busca
                 + "cadastrados é: "
                 + quantidadeRegistros++);
-    }
-
+        }
     public void buscarPeloNome() {
         String busca = JOptionPane.showInputDialog("Digite o nome parcial do bombeiro(a) para a busca.");
         for (int i = 0; i < atual; i++) {
