@@ -33,8 +33,6 @@ public class RegistroEdificio {
         }
     }
 
-    
-
     public void listarEdificios() {
         String texto = "";
         for (int i = 0; i < atual; i++) {
