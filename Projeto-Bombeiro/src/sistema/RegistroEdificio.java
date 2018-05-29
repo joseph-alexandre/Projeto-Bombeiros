@@ -45,7 +45,7 @@ public class RegistroEdificio {
     public void listarEdificios() {
         String texto = "";
         for (int i = 0; i < atual; i++) {
-            texto += edificio[i] + "      -       " + nome[i] + "\n";
+            texto += edificio[i] + ",  " + nome[i] + "\n";
         }
         JOptionPane.showMessageDialog(null, texto);
     }
@@ -56,8 +56,10 @@ public class RegistroEdificio {
                 .replace(".", "").replace("-", "");
         cidade[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite a cidade do edifício: ");
         rua[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite a rua do edifício: ");
-        cep[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite o CEP do edifício: ");
-        cnpj[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite o CNPJ do edifício: ");
+        cep[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite o CEP do edifício: ")
+                .replace(".", "").replace("-", "");
+        cnpj[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite o CNPJ do edifício: ")
+                .replace(".", "").replace("-", "");
         edificio[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite o tipo de edifício: ");
 
     }
