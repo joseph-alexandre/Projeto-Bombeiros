@@ -24,33 +24,16 @@ public class RegistroEdificio {
     }
 
     public void editarEdificio() {
-        String busca = JOptionPane.showInputDialog("Digite o nome do edifício para solicitação: ");
+        String busca = JOptionPane.showInputDialog("Digite o nome fantasia do edifício para modificações: ");
         for (int i = 0; i < atual; i++) {
-            if (edificio[i].equalsIgnoreCase(busca)) {
+            if (nomeEdificio[i].equalsIgnoreCase(busca)) {
                 apresentarInformacao(i);
                 return;
             }
         }
     }
 
-    public void buscarPeloNome() {
-        String busca = JOptionPane.showInputDialog("Digite o nome do edificio registrado: ");
-        for (int i = 0; i < atual; i++) {
-            if (nomeEdificio[i].contains(busca)) {
-                JOptionPane.showMessageDialog(null,
-                        "Nome do proprietário: " + nome[i] 
-                        + "\nCpf: " + cpf[i]
-                        + "\nCidade do edificio: " + cidade[i])
-                        + "\nRua do edificio: " + rua[i]
-                        + "\nCEP: " + cep[i]
-                        + "\nCNPJ: " + cnpj[i]
-                        + "\nTipo de edificio: " + edificio[i]
-                        + "\nNome fantasia do edificio: " + nomeEdificio[i]);
-                                
-              
-            }
-        }
-    }
+    
 
     public void listarEdificios() {
         String texto = "";
