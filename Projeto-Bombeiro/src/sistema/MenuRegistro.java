@@ -12,43 +12,40 @@ public class MenuRegistro {
     int escolha = 0;
 
     public void menuRegistro() {
-        escolha = Integer.parseInt(JOptionPane.showInputDialog(null,
-                "Registros\n"
-                + "1    -  Registro de Bombeiro\n"
-                + "2    -  Registro de Edifício\n"
-                + "3    -  Registro de Ocorrência\n"
-                + "4    -  Retornar",
-                "MENU REGISTROS", 0,
+        escolha = JOptionPane.showOptionDialog(null, "Registros\n"
+                + "Selecione uma opção: ", "MENU REGISTROS", 0,
+                JOptionPane.INFORMATION_MESSAGE,
                 new ImageIcon(Sistema.class.getResource("fire-extinguisher.png")),
-                null, null).toString());
-
-        while (escolha != 4) {
+                new Object[]{
+                    "Registro de Bombeiro",
+                    "Registro de Edifício",
+                    "Registro de Ocorrência",
+                    "RETORNAR"
+                }, null);
+        while (escolha != 3) {
             switch (escolha) {
-                case 1:
+                case 0:
                     menuBombeiro.menuRegistroBombeiro();
                     break;
-                case 2:
+                case 1:
                     menuRegistroEdificio.menuRegistroEdificio();
                     break;
-                case 3:
+                case 2:
                     menuOcorrencia.menuOcorrencia();
                     break;
-                default:
-                    JOptionPane.showMessageDialog(null,
-                            "Escolha outra opção!",
-                            "Opção inválida",
-                            JOptionPane.ERROR_MESSAGE);
+                
 
             }
-            escolha = Integer.parseInt(JOptionPane.showInputDialog(null,
-                    "Registros\n"
-                    + "1    -  Registro de Bombeiro\n"
-                    + "2    -  Registro de Edifício\n"
-                    + "3    -  Registro de Ocorrência\n"
-                    + "4    -  Retornar",
-                    "MENU REGISTROS", 0,
-                    new ImageIcon(Sistema.class.getResource("fire-extinguisher.png")),
-                    null, null).toString());
+            escolha = JOptionPane.showOptionDialog(null, "Registros\n"
+                + "Selecione uma opção: ", "MENU REGISTROS", 0,
+                JOptionPane.INFORMATION_MESSAGE,
+                new ImageIcon(Sistema.class.getResource("fire-extinguisher.png")),
+                new Object[]{
+                    "Registro de Bombeiro",
+                    "Registro de Edifício",
+                    "Registro de Ocorrência",
+                    "RETORNAR"
+                }, null);
         }
 
     }

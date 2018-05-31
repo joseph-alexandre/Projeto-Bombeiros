@@ -24,44 +24,43 @@ public class Sistema {
                 0,
                 new ImageIcon(Sistema.class.getResource("placeholder.png")));
 
-        int escolha = Integer.parseInt(JOptionPane.showInputDialog(null,
-                "1    -  Registros\n"
-                + "2    -  Solicitação do AVCB\n"
-                + "3    -  Sobre\n"
-                + "4    -  Sair",
-                "MENU PRINCIPAL", 0,
-                new ImageIcon(Sistema.class.getResource("axes.png")), 
-                null, 
-                null).toString());
+        int escolha = JOptionPane.showOptionDialog(null, "Bem vindo ao Sistema! "
+                + "\n\nSelecione uma opção: ", "MENU PRINCIPAL", 0,
+                JOptionPane.INFORMATION_MESSAGE,
+                new ImageIcon(Sistema.class.getResource("axes.png")),
+                new Object[]{
+                    "Registros",
+                    "Solicitação do AVCB",
+                    "Sobre",
+                    "SAIR",}, null);
 
-        while (escolha != 4) {
+        while (escolha < 3) {
             switch (escolha) {
-                case 1:
+                case 0:
                     menus.menuRegistro();
                     break;
-                case 2:
+                case 1:
                     menusAvcb.RegistroAvcb();
                     break;
-                case 3:
+                case 2:
                     sobre.Sobre();
                     break;
-                default:
-                    JOptionPane.showMessageDialog(null,
-                            "Escolha outra opção!",
-                            "Opção inválida",
-                            JOptionPane.ERROR_MESSAGE);
+               // default:
+                 //   JOptionPane.showMessageDialog(null,
+                   //         "Escolha outra opção!",
+                     //       "Opção inválida",
+                       //     JOptionPane.ERROR_MESSAGE);
             }
 
-            escolha = Integer.parseInt(JOptionPane.showInputDialog(null,
-                "1    -  Registros\n"
-                + "2    -  Solicitação do AVCB\n"
-                + "3    -  Sobre\n"
-                + "4    -  Sair",
-                "MENU PRINCIPAL", 0,
-                new ImageIcon(Sistema.class.getResource("axes.png")), 
-                null, 
-                null).toString()
-        );
+            escolha = JOptionPane.showOptionDialog(null, "Bem vindo ao Sistema! "
+                + "\n\nSelecione uma opção: ", "MENU PRINCIPAL", 0,
+                JOptionPane.INFORMATION_MESSAGE,
+                new ImageIcon(Sistema.class.getResource("axes.png")),
+                new Object[]{
+                    "Registros",
+                    "Solicitação do AVCB",
+                    "Sobre",
+                    "SAIR",}, null);
 
         }
     }

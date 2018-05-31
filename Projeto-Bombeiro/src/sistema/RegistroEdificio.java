@@ -10,8 +10,10 @@ public class RegistroEdificio {
 
     String[] nome = new String[100];
     String[] cpf = new String[100];
+    int[] numero = new int[100];
     String[] cidade = new String[100];
     String[] rua = new String[100];
+    int[] num = new int[100];
     String[] cep = new String[100];
     String[] cnpj = new String[100];
     String[] edificio = new String[100];
@@ -32,7 +34,8 @@ public class RegistroEdificio {
             }
         }
     }
-    public void buscarPeloEdificio(){
+
+    public void buscarPeloEdificio() {
         String busca = JOptionPane.showInputDialog("Digite o nome parcial do bombeiro(a) para a busca.");
         for (int i = 0; i < atual; i++) {
             if (nomeEdificio[i].contains(busca)) {
@@ -45,7 +48,7 @@ public class RegistroEdificio {
     public void listarEdificios() {
         String texto = "";
         for (int i = 0; i < atual; i++) {
-            texto += edificio[i] + ",  " + nome[i] + "\n";
+            texto += nomeEdificio[i] + ",  " + rua[i] + ",  " + nome[i] + ", " + numero[i] + "\n";
         }
         JOptionPane.showMessageDialog(null, texto);
     }
@@ -53,26 +56,38 @@ public class RegistroEdificio {
     public void solicitarInformacao(int posicao) {
         nome[posicao] = JOptionPane.showInputDialog("Digite o nome do proprietario do edifício: ");
         cpf[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite seu CPF: ")
-                .replace(".", "").replace("-", "");
+                .replace(".", "").replace("-", "").trim();
+        numero[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Digite o número de telefone do proprietário: ")
+                .replace(".", "").replace("-", "").trim());                
         cidade[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite a cidade do edifício: ");
         rua[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite a rua do edifício: ");
+        num[posicao] = Integer.parseInt(JOptionPane.showInputDialog(nome[posicao] + ", digite o numero: "));
         cep[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite o CEP do edifício: ")
-                .replace(".", "").replace("-", "");
+                .replace(".", "").replace("-", "").trim();
         cnpj[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite o CNPJ do edifício: ")
-                .replace(".", "").replace("-", "");
-        edificio[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite o tipo de edifício: ");
+                .replace(".", "").replace("-", "").trim();
+        edificio[posicao] = JOptionPane.showInputDialog(null, nome[posicao] + "Selecione o tipo de edificio",
+                "TIPOS DE EDIFICIO", JOptionPane.QUESTION_MESSAGE,
+                null,
+                new Object[]{ "", "Residenciais", "Escritórios", "Comerciais",
+                    "Industriais", "Especiais", "Mistos"
+                },
+                "").toString();
+        nomeEdificio[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite o nome fantasia do edifício: ");
 
     }
 
     public void apresentarInformacao(int posicao) {
         JOptionPane.showMessageDialog(null,
                 "Nome do proprietario: " + nome[posicao]
-                + "CPF do proprio: " + cpf[posicao]
-                + "Cidade do edificio: " + cidade[posicao]
-                + "Rua do edificio: " + rua[posicao]
-                + "CEP do edificio: " + cep[posicao]
-                + "CNPJ do registro: " + cnpj[posicao]
-                + "Tipo de edificio: " + edificio[posicao]);
+                + "\nCPF do proprio: " + cpf[posicao]
+                + "\nCidade do edificio: " + cidade[posicao]
+                + "\nRua do edificio: " + rua[posicao]
+                + "\nNumero do edificio: " + num[posicao]
+                + "\nCEP do edificio: " + cep[posicao]
+                + "\nCNPJ do registro: " + cnpj[posicao]
+                + "\nTipo de edificio: " + edificio[posicao]
+                + "\nNome fantasia do edificio: " + nomeEdificio[posicao]);
 
     }
 

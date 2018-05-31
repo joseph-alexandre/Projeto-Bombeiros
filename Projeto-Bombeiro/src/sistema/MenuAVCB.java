@@ -13,38 +13,41 @@ public class MenuAVCB {
 
     public void RegistroAvcb() {
 
-        int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
-                "Auto de Vistoria do Corpo de Bombeiros de Santa Catarina\n"
-                + "1    -  Cadastrar AVCB\n"
-                + "2    -  Listar AVCB\n"
-                + "3    -  Editar AVCB\n"
-                + "4    -  Retornar",
-                "MENU AVCB", 0,
+        int menu = JOptionPane.showOptionDialog(null, "Auto de Vistoria do Corpo de Bombeiros de Santa Catarina\n"
+                + "Selecione uma opção: ", "MENU AVCB", 0,
+                JOptionPane.INFORMATION_MESSAGE,
                 new ImageIcon(Sistema.class.getResource("fire-station.png")),
-                null, null).toString());
+                new Object[]{
+                    "Cadastro",
+                    "Listar",
+                    "Editar",
+                    "RETORNAR"
+                }, null);
 
-        while (menu != 4) {
+        while (menu != 3) {
             switch (menu) {
-                case 1:
+                case 0:
                     menuAvcb.cadastrar();
                     break;
-                case 2:
+                case 1:
                     menuAvcb.listar();
                     break;
-                case 3:
+                case 2:
                     menuAvcb.editar();
                     break;
-                default:
-                    JOptionPane.showMessageDialog(null,
-                            "Escolha outra opção!",
-                            "Opção inválida",
-                            JOptionPane.ERROR_MESSAGE);
+                
             }
-            menu = Integer.parseInt(JOptionPane.showInputDialog("Auto de Vistoria do corpo de Bombeiros de Santa Catarina\n"
-                    + "1    -  Cadastrar AVCB\n"
-                    + "2    -  Listar AVCB\n"
-                    + "3    -  Editar AVCB\n"
-                    + "4    -  Sair"));
+            menu = JOptionPane.showOptionDialog(null, "Auto de Vistoria do Corpo de Bombeiros de Santa Catarina\n"
+                + "Selecione uma opção: ", "MENU AVCB", 0,
+                JOptionPane.INFORMATION_MESSAGE,
+                new ImageIcon(Sistema.class.getResource("fire-station.png")),
+                new Object[]{
+                    "Cadastro",
+                    "Listar",
+                    "Editar",
+                    "RETORNAR"
+                }, null);
+
         }
     }
 
