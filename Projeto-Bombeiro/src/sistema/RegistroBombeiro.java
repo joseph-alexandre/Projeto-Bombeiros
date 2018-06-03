@@ -105,7 +105,7 @@ public class RegistroBombeiro {
                 + "\nAltura: " + alturas[posicao]
                 + "\nPeso: " + pesos[posicao]
                 + "\nBatalhão: " + batalhoes[posicao]
-                + "\n";
+                + "\n\n";
      JOptionPane.showMessageDialog(null, texto);
 }
 
@@ -122,7 +122,7 @@ public class RegistroBombeiro {
 
     public void solicitarInformacao(int posicao) {
         nomes[posicao] = JOptionPane.showInputDialog("Informe o nome do bombeiro(a).");
-        idades[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Informe a idade do(a) " + nomes[posicao] + ":"));
+        idades[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Informe a idade do(a) " + nomes[posicao] + ":").trim());
         while (idades[posicao] < 18 || idades[posicao] > 90) {
             JOptionPane.showMessageDialog(null,
             "A idade deve ser entre 18 a 90 anos.");
@@ -138,16 +138,16 @@ public class RegistroBombeiro {
             "Digite novamente o sexo.").charAt(0);
        }
 
-        alturas[posicao] = Double.parseDouble(JOptionPane.showInputDialog("Informe a altura do(a) " + nomes[posicao] + ":").replace(",", "."));
-        pesos[posicao] = Double.parseDouble(JOptionPane.showInputDialog("Informe o peso do(a) " + nomes[posicao] + ":").replace(",", "."));
+        alturas[posicao] = Double.parseDouble(JOptionPane.showInputDialog("Informe a altura do(a) " + nomes[posicao] + ":").replace(",", ".").trim());
+        pesos[posicao] = Double.parseDouble(JOptionPane.showInputDialog("Informe o peso do(a) " + nomes[posicao] + ":").replace(",", ".").trim());
         batalhoes[posicao] = JOptionPane.showInputDialog(null, "Selecione o batalhão pertencente", "", JOptionPane.QUESTION_MESSAGE, null, new Object[]{"1º BBM - Florianópolis", "2º BBM - Curitibanos", "3º BBM - Blumenau", "4º BBM - Criciuma ", "5º BBM - Lages", "6° BBM - Chapecó", "7º BBM - Itajaí"},
         batalhoes[posicao] != null ? batalhoes[posicao] : "3º BBM - Blumenau").toString();
         
         cpfs[posicao] = (JOptionPane.showInputDialog("Informe o CPF do(a) " + nomes[posicao] + ":",
-                cpfs[posicao] != null ? cpfs[posicao] : "")).replace(".", "").replace("-", "");
+                cpfs[posicao] != null ? cpfs[posicao] : "")).replace(".", "").replace("-", "").trim();
 
         while (cpfs[posicao].trim().equals("") 
-                || cpfs[posicao].replace(".", "").replace("-", "").length() < 11 || cpfs[posicao].replace(".", "").replace("-", "").length() > 11) {
+                || cpfs[posicao].replace(".", "").replace("-", "").trim().length() < 11 || cpfs[posicao].replace(".", "").replace("-", "").trim().length() > 11) {
             JOptionPane.showMessageDialog(null,
             "O CPF deve conter obrigatoriamente 11 dígitos.");
             cpfs[posicao] = JOptionPane.showInputDialog(
