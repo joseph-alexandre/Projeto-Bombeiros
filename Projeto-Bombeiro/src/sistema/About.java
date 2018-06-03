@@ -12,7 +12,7 @@ public class About {
     public void Sobre() {
 
         JOptionPane.showMessageDialog(null, "VIDA ALHEIA E RIQUEZAS A SALVAR!\n\n"
-                + "193 - Bombeiros", "CORPO DE BOMBEIROS MILITAR DE SANTA CATARINA",
+                + "193 - Bombeiros", "SOBRE - CBMSC",
                 0,
                 new ImageIcon(Sistema.class.getResource("emergency-call.png")));
 

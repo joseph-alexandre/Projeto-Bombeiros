@@ -16,6 +16,9 @@ public class RegistroBombeiro {
     String[] regioes = new String[100];
     String[] cargos = new String[100];
     char[] sexo = new char[100];
+    char[] sexos = new char[100];
+    String[] buscarBatalhoes = new String[100];
+    String[] cpfs = new String[100];
     int atual = 0;
 
     public void cadastrar() {
@@ -38,7 +41,7 @@ public class RegistroBombeiro {
     public void listar() {
         String texto = "";
         for (int i = 0; i < atual; i++) {
-            texto += nomes[i] + "     " + cargos[i] + "\n";
+            texto += nomes[i] + "     " + batalhoes[i] + "\n";
 
         }
         JOptionPane.showMessageDialog(null, texto);
@@ -57,7 +60,7 @@ public class RegistroBombeiro {
         JOptionPane.showMessageDialog(null,
                 "A quantidade de "
                 + busca
-                + "cadastrados é: "
+                + " cadastrados é: "
                 + quantidadeRegistros++);
         }
     public void buscarPeloNome() {
@@ -71,28 +74,40 @@ public class RegistroBombeiro {
     }
 
     public void buscarPorBatalhao() {
-        String batalhaoBuscado = JOptionPane.showInputDialog("Digite o batalhão pertencente do bombeiro(a).");
+        String buscarrBatalhoes = JOptionPane.showInputDialog(null, "Selecione o batalhão pertencente para a busca", "", JOptionPane.QUESTION_MESSAGE, null, new Object[]{"1º BBM - Florianópolis", "2º BBM - Curitibanos", "3º BBM - Blumenau", "4º BBM - Criciuma ", "5º BBM - Lages", "6° BBM - Chapecó", "7º BBM - Itajaí"},
+        buscarBatalhoes != null ? buscarBatalhoes : "3º BBM - Blumenau").toString();
+        String texto = "";
         for (int i = 0; i < atual; i++) {
-            if (batalhoes[i].equals(batalhaoBuscado)) {
-                apresentarInformacao(i);
-                return;
-            }
-
+            if (batalhoes[i].equals(buscarrBatalhoes)) {
+            texto += "Nome: " + nomes[i]
+                + "\nIdade: " + idades[i]
+                + "\nSexo: " + sexo[i]
+                + "\nAltura: " + alturas[i]
+                + "\nPeso: " + pesos[i]
+                + "\nBatalhão: " + batalhoes[i]
+                + "\n";
+                
+                
+            } else if(!batalhoes[i].equals(buscarrBatalhoes)){ 
+            JOptionPane.showMessageDialog(null, "Não há nenhum bombeiro(a) registrado neste batalhão.");
+            return;
         }
-        JOptionPane.showMessageDialog(null, "Batalhão não encontrado.");
-
-    }
-
-    public void buscarPorCargo() {
-        String cargoBuscado = JOptionPane.showInputDialog("Digite o cargo pertencente do bombeiro(a).");
-
-        for (int i = 0; i < atual; i++) {
-            if (cargos[i].equals(cargoBuscado)) {
-                apresentarInformacao(i);
-                return;
-            }
+            
         }
+ JOptionPane.showMessageDialog(null, texto);
     }
+    public void apresentarBuscaPorBatalhao(int posicao){
+     
+        String texto = "";
+        texto += "Nome: " + nomes[posicao]
+                + "\nIdade: " + idades[posicao]
+                + "\nSexo: " + sexo[posicao]
+                + "\nAltura: " + alturas[posicao]
+                + "\nPeso: " + pesos[posicao]
+                + "\nBatalhão: " + batalhoes[posicao]
+                + "\n";
+     JOptionPane.showMessageDialog(null, texto);
+}
 
     public void apresentarInformacao(int posicao) {
         JOptionPane.showMessageDialog(null, "Nome: " + nomes[posicao]
@@ -101,19 +116,46 @@ public class RegistroBombeiro {
                 + "\nAltura: " + alturas[posicao]
                 + "\nPeso: " + pesos[posicao]
                 + "\nBatalhão: " + batalhoes[posicao]
-                + "\nRegião: " + regioes[posicao]
-                + "\nCargo: " + cargos[posicao]);
+        );
+                
     }
 
     public void solicitarInformacao(int posicao) {
         nomes[posicao] = JOptionPane.showInputDialog("Informe o nome do bombeiro(a).");
         idades[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Informe a idade do(a) " + nomes[posicao] + ":"));
-        sexo[posicao] = JOptionPane.showInputDialog("Informe o sexo do(a) " + nomes[posicao] + ":").toUpperCase().charAt(0);
-        alturas[posicao] = Double.parseDouble(JOptionPane.showInputDialog("Informe a altura do(a) " + nomes[posicao] + ":"));
-        pesos[posicao] = Double.parseDouble(JOptionPane.showInputDialog("Informe o peso do(a) " + nomes[posicao] + ":"));
-        batalhoes[posicao] = JOptionPane.showInputDialog("Informe o batalhão do(a) " + nomes[posicao] + ":");
-        regioes[posicao] = JOptionPane.showInputDialog("Informe a região do(a) " + nomes[posicao] + ":");
-        cargos[posicao] = JOptionPane.showInputDialog("Informe o cargo do(a) " + nomes[posicao] + ":");
+        while (idades[posicao] < 18 || idades[posicao] > 90) {
+            JOptionPane.showMessageDialog(null,
+            "A idade deve ser entre 18 a 90 anos.");
+            idades[posicao] = Integer.parseInt(JOptionPane.showInputDialog(
+            "Digite novamente a idade."));
+       }
+        sexo[posicao] = JOptionPane.showInputDialog("Informe o sexo do(a) " + nomes[posicao] + ":").charAt(0);
+       while (sexo[posicao] != 'm' 
+                && sexo[posicao] != 'f' && sexo[posicao] != 'M' && sexo[posicao] != 'F') {
+            JOptionPane.showMessageDialog(null,
+            "O sexo deve ser masculino ou feminino.");
+            sexo[posicao] = JOptionPane.showInputDialog(
+            "Digite novamente o sexo.").charAt(0);
+       }
+
+        alturas[posicao] = Double.parseDouble(JOptionPane.showInputDialog("Informe a altura do(a) " + nomes[posicao] + ":").replace(",", "."));
+        pesos[posicao] = Double.parseDouble(JOptionPane.showInputDialog("Informe o peso do(a) " + nomes[posicao] + ":").replace(",", "."));
+        batalhoes[posicao] = JOptionPane.showInputDialog(null, "Selecione o batalhão pertencente", "", JOptionPane.QUESTION_MESSAGE, null, new Object[]{"1º BBM - Florianópolis", "2º BBM - Curitibanos", "3º BBM - Blumenau", "4º BBM - Criciuma ", "5º BBM - Lages", "6° BBM - Chapecó", "7º BBM - Itajaí"},
+        batalhoes[posicao] != null ? batalhoes[posicao] : "3º BBM - Blumenau").toString();
+        
+        cpfs[posicao] = (JOptionPane.showInputDialog("Informe o CPF do(a) " + nomes[posicao] + ":",
+                cpfs[posicao] != null ? cpfs[posicao] : "")).replace(".", "").replace("-", "");
+
+        while (cpfs[posicao].trim().equals("") 
+                || cpfs[posicao].replace(".", "").replace("-", "").length() < 11 || cpfs[posicao].replace(".", "").replace("-", "").length() > 11) {
+            JOptionPane.showMessageDialog(null,
+            "O CPF deve conter obrigatoriamente 11 dígitos.");
+            cpfs[posicao] = JOptionPane.showInputDialog(
+            "Digite novamente o CPF.",
+            cpfs[posicao] != null ? cpfs[posicao] : "");
+
+        }
+        
 
     }
 }

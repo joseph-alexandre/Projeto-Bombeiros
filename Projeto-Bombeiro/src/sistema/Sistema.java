@@ -24,8 +24,7 @@ public class Sistema {
                 0,
                 new ImageIcon(Sistema.class.getResource("placeholder.png")));
 
-        int escolha = JOptionPane.showOptionDialog(null, "Bem vindo ao Sistema! "
-                + "\n\nSelecione uma opção: ", "MENU PRINCIPAL", 0,
+        int escolha = JOptionPane.showOptionDialog(null, "Selecione uma opção: ", "MENU PRINCIPAL", 0,
                 JOptionPane.INFORMATION_MESSAGE,
                 new ImageIcon(Sistema.class.getResource("axes.png")),
                 new Object[]{
@@ -52,8 +51,7 @@ public class Sistema {
                        //     JOptionPane.ERROR_MESSAGE);
             }
 
-            escolha = JOptionPane.showOptionDialog(null, "Bem vindo ao Sistema! "
-                + "\n\nSelecione uma opção: ", "MENU PRINCIPAL", 0,
+            escolha = JOptionPane.showOptionDialog(null, "Selecione uma opção: ", "MENU PRINCIPAL", 0,
                 JOptionPane.INFORMATION_MESSAGE,
                 new ImageIcon(Sistema.class.getResource("axes.png")),
                 new Object[]{

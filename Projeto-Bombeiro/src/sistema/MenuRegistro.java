@@ -12,8 +12,7 @@ public class MenuRegistro {
     int escolha = 0;
 
     public void menuRegistro() {
-        escolha = JOptionPane.showOptionDialog(null, "Registros\n"
-                + "Selecione uma opção: ", "MENU REGISTROS", 0,
+        escolha = JOptionPane.showOptionDialog(null, "Selecione uma opção: ", "MENU - REGISTROS", 0,
                 JOptionPane.INFORMATION_MESSAGE,
                 new ImageIcon(Sistema.class.getResource("fire-extinguisher.png")),
                 new Object[]{
@@ -36,8 +35,7 @@ public class MenuRegistro {
                 
 
             }
-            escolha = JOptionPane.showOptionDialog(null, "Registros\n"
-                + "Selecione uma opção: ", "MENU REGISTROS", 0,
+            escolha = JOptionPane.showOptionDialog(null, "Selecione uma opção: ", "MENU - REGISTROS", 0,
                 JOptionPane.INFORMATION_MESSAGE,
                 new ImageIcon(Sistema.class.getResource("fire-extinguisher.png")),
                 new Object[]{
@@ -45,8 +43,7 @@ public class MenuRegistro {
                     "Registro de Edifício",
                     "Registro de Ocorrência",
                     "RETORNAR"
-                }, null);
-        }
+                }, null);        }
 
     }
 }
