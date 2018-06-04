@@ -68,14 +68,33 @@ public class RegistroEdificio {
 
         }
         numero[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Digite o número de telefone do proprietário: ")
-                .replace(".", "").replace("-", "").trim());                
+                .replace(".", "").replace("-", "").replace("(", "").replace(")", "").replace(" ", "").trim());                
         cidade[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite a cidade do edifício: ");
         rua[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite a rua do edifício: ");
         num[posicao] = Integer.parseInt(JOptionPane.showInputDialog(nome[posicao] + ", digite o numero: "));
-        cep[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite o CEP do edifício: ")
-                .replace(".", "").replace("-", "").trim();
+        cep[posicao] = (JOptionPane.showInputDialog(nome[posicao] + ", informe o CEP do edifício:",
+                cep[posicao] != null ? cep[posicao] : "")).replace(".", "").replace("-", "").trim();
+
+        while (cep[posicao].trim().equals("") 
+                || cep[posicao].replace(".", "").replace("-", "").trim().length() < 8 || cep[posicao].replace(".", "").replace("-", "").trim().length() > 8) {
+            JOptionPane.showMessageDialog(null,
+            "O CEP deve conter obrigatoriamente 8 dígitos.");
+            cep[posicao] = JOptionPane.showInputDialog(
+            "Digite novamente o CEP.",
+            cep[posicao] != null ? cep[posicao] : "");
+
+        }
         cnpj[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite o CNPJ do edifício: ")
-                .replace(".", "").replace("-", "").trim();
+                .replace(".", "").replace("-", "").replace("/", "").trim();
+        while (cnpj[posicao].trim().equals("") 
+                || cnpj[posicao].replace(".", "").replace("-", "").replace("/", "").trim().length() < 14 || cnpj[posicao].replace(".", "").replace("-", "").replace("/", "").trim().length() > 14) {
+            JOptionPane.showMessageDialog(null,
+            "O CNPJ deve conter obrigatoriamente 14 dígitos.");
+            cnpj[posicao] = JOptionPane.showInputDialog(
+            "Digite novamente o CNPJ.",
+            cnpj[posicao] != null ? cnpj[posicao] : "");
+
+        }
         edificio[posicao] = JOptionPane.showInputDialog(null, nome[posicao] + "Selecione o tipo de edificio",
                 "TIPOS DE EDIFICIO", JOptionPane.QUESTION_MESSAGE,
                 null,
