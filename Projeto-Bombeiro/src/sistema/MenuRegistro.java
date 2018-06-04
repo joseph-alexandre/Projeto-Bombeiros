@@ -3,6 +3,10 @@ package sistema;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
+/**
+ *
+ * @author Joseph
+ */
 public class MenuRegistro {
 
     RegistroBombeiro registroBombeiro = new RegistroBombeiro();

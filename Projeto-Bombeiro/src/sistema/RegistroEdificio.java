@@ -55,8 +55,18 @@ public class RegistroEdificio {
 
     public void solicitarInformacao(int posicao) {
         nome[posicao] = JOptionPane.showInputDialog("Digite o nome do proprietario do edifício: ");
-        cpf[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite seu CPF: ")
-                .replace(".", "").replace("-", "").trim();
+        cpf[posicao] = (JOptionPane.showInputDialog("Informe o CPF:",
+                cpf[posicao] != null ? cpf[posicao] : "")).replace(".", "").replace("-", "").trim();
+
+        while (cpf[posicao].trim().equals("") 
+                || cpf[posicao].replace(".", "").replace("-", "").trim().length() < 11 || cpf[posicao].replace(".", "").replace("-", "").trim().length() > 11) {
+            JOptionPane.showMessageDialog(null,
+            "O CPF deve conter obrigatoriamente 11 dígitos.");
+            cpf[posicao] = JOptionPane.showInputDialog(
+            "Digite novamente o CPF.",
+            cpf[posicao] != null ? cpf[posicao] : "");
+
+        }
         numero[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Digite o número de telefone do proprietário: ")
                 .replace(".", "").replace("-", "").trim());                
         cidade[posicao] = JOptionPane.showInputDialog(nome[posicao] + ", digite a cidade do edifício: ");
